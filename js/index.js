@@ -37,36 +37,48 @@ const siteContent = {
   },
 };
 
-// Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+//-----------Assignment starts here---------------:
 
-//Assignment starts here:
+//.container styling:
+const container = document.querySelector('body');
+container.style.fontFamily = 'Titillium Web', 'sans-serif';
+container.style.width = '880px';
+container.style.margin = 'auto';
 
 //Header:
+const header = document.querySelector('header');
+header.style.width = '100%';
+header.style.display = 'flex';
+header.style.fontFamily = 'Bangers', 'cursive';
+
 
 //Navigation:
-/*
-setting siteContent.nav.[nav-items] to variables.
-seems more like a long-term solution to setting
-the nav, not hardcoded to text.*/
+const navBar = document.getElementsByTagName('nav');
+let logo = document.getElementById("logo-img");
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
-//Assigning variable names to site content in the objects in js file:
-let firstNav = siteContent.nav["nav-item-1"];
-let secondNav = siteContent.nav["nav-item-2"];
-let thirdNav = siteContent.nav["nav-item-3"];
-let fourthNav = siteContent.nav["nav-item-4"];
-let fifthNav = siteContent.nav["nav-item-5"];
-let sixthNav = siteContent.nav["nav-item-6"];
-//Grabbing anchor tags and assigning respectively:
-let navBar = document.querySelectorAll('a');
-navBar[0].textContent = firstNav;
-navBar[1].textContent = secondNav;
-navBar[2].textContent = thirdNav;
-navBar[3].textContent = fourthNav;
-navBar[4].textContent = fifthNav;
-navBar[5].textContent = sixthNav;
+//Nav a:
+const navItems = document.getElementsByTagName('a');
+// navItems.style.fontFamily = 'Titilium Web', 'sans serif';
 
-//Lower Header(text, button and img):
+//Assigning text to navItems:
+navItems[0].textContent = siteContent.nav["nav-item-1"];
+navItems[1].textContent = siteContent.nav["nav-item-2"];
+navItems[2].textContent = siteContent.nav["nav-item-3"];
+navItems[3].textContent = siteContent.nav["nav-item-4"];
+navItems[4].textContent = siteContent.nav["nav-item-5"];
+navItems[5].textContent = siteContent.nav["nav-item-6"];
 
-let headerText = siteContent.nav
+//H1:
+const headerH1 = document.querySelector('h1');
+headerH1.textContent = siteContent.cta["h1"];
+headerH1.style.letterSpacing = '1px';
+headerH1.style.marginBottom = '15px';
+
+//img:
+const headerImg = document.getElementById('cta-img');
+headerImg.src = siteContent.cta["img-src"];
+
+//button:
+const ctaButton = siteContent.cta["button"];
+
