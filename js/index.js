@@ -39,29 +39,30 @@ const siteContent = {
 
 //-----------Assignment starts here---------------:
 
-//.container styling:
+//.container
 const container = document.querySelector('body');
 container.style.fontFamily = 'Titillium Web', 'sans-serif';
 container.style.width = '880px';
 container.style.margin = 'auto';
 
-//Header:
+//--------------------Header:--------------------------
 const header = document.querySelector('header');
 header.style.width = '100%';
 header.style.display = 'flex';
 header.style.fontFamily = 'Bangers', 'cursive';
 
 
-//Navigation:
+//Nav
 const navBar = document.getElementsByTagName('nav');
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
-//Nav a:
-const navItems = document.getElementsByTagName('a');
-// navItems.style.fontFamily = 'Titilium Web', 'sans serif';
+//Nav a
+const navItems = document.querySelectorAll('a');
+//Come back to change font family of nav bar/a to
+//'titilium Web', 'sans serif'
 
-//Assigning text to navItems:
+//navItems:
 navItems[0].textContent = siteContent.nav["nav-item-1"];
 navItems[1].textContent = siteContent.nav["nav-item-2"];
 navItems[2].textContent = siteContent.nav["nav-item-3"];
@@ -69,16 +70,55 @@ navItems[3].textContent = siteContent.nav["nav-item-4"];
 navItems[4].textContent = siteContent.nav["nav-item-5"];
 navItems[5].textContent = siteContent.nav["nav-item-6"];
 
-//H1:
+//-----------------------.cta:---------------------------
+
+//H1
 const headerH1 = document.querySelector('h1');
 headerH1.textContent = siteContent.cta["h1"];
 headerH1.style.letterSpacing = '1px';
 headerH1.style.marginBottom = '15px';
 
-//img:
+//img
 const headerImg = document.getElementById('cta-img');
 headerImg.src = siteContent.cta["img-src"];
 
-//button:
-const ctaButton = siteContent.cta["button"];
+//button
+const ctaButton = document.querySelector('button');
+ctaButton.textContent = siteContent.cta["button"];
 
+//-------------------main-content:-----------------------
+
+//.top-content
+const topContent = document.getElementsByClassName('top-content');
+const topContentTextContent = document.querySelector(topContent['text-content']);
+console.log(topContentTextContent);
+
+  //.text-content
+  
+  //h4
+
+  //p
+
+  //.text-content
+
+//.middle-img
+
+//.bottom-content
+  
+  //.text-content
+
+  //.text-content
+
+  //.text-content
+
+//---------------------.contact:-------------------------
+
+//h4
+
+//p
+
+//p
+
+//p
+
+//----------------------footer:--------------------------
