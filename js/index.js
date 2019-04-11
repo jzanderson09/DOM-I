@@ -38,35 +38,13 @@ const siteContent = {
 };
 
 //-----------Assignment starts here---------------:
-
-//.container
-const container = document.querySelector('body');
-//container.style.fontFamily = 'Titillium Web', 'sans-serif';
-container.style.width = '880px';
-container.style.margin = 'auto';
-
 //--------------------Header:--------------------------
 const header = document.querySelector('header');
 
-//appendChild()
-const extraNavItem = document.createElement('a');
-const firstNavItem = document.createTextNode("First Link");
-
-// const extraNavNode = document.createTextNode('first link');
-// extraNavItem.appendChild(extraNavNode);
-// document.getElementsByTagName('nav').appendChild(extraNavItem);
-
 //Nav
-const navBar = document.getElementsByTagName('nav');
+const navBar = document.querySelector('nav');
 const logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
-
-//prepend()
-
-// var node = document.createElement("LI");                 // Create a <li> node
-// var textnode = document.createTextNode("Water");         // Create a text node
-// node.appendChild(textnode);                              // Append the text to <li>
-// document.getElementById("myList").appendChild(node);     // Append <li> to <ul> with id="myList"
 
 //Nav a
 const navItems = document.querySelectorAll('a');
@@ -80,17 +58,26 @@ navItems[3].textContent = siteContent.nav["nav-item-4"];
 navItems[4].textContent = siteContent.nav["nav-item-5"];
 navItems[5].textContent = siteContent.nav["nav-item-6"];
 
+//prepend()
+const firstNavItem = document.createElement('a');
+firstNavItem.textContent = 'E-Commerce';
+firstNavItem.href = '#';
+firstNavItem.style.color = 'green';
+navBar.prepend(firstNavItem);
+
+//appendChild()
+const lastNavItem = document.createElement('a');
+lastNavItem.textContent = 'BlogSpot';
+lastNavItem.href = '#';
+lastNavItem.style.color = 'green';
+navBar.appendChild(lastNavItem);
 
 //-----------------------.cta:---------------------------
-const ctaSection = document.getElementsByClassName('.cta');
+const ctaSection = document.querySelectorAll('.cta');
 
 //H1
 const headerH1 = document.querySelector('h1');
 headerH1.innerHTML = siteContent.cta["h1"];
-//Can't get line breaks, come back to this.
-headerH1.style.fontFamily = 'Bangers, cursive';
-headerH1.style.letterSpacing = '1px';
-headerH1.style.marginBottom = '15px';
 
 //img
 const headerImg = document.getElementById('cta-img');
@@ -101,7 +88,6 @@ const ctaButton = document.querySelector('button');
 ctaButton.textContent = siteContent.cta["button"];
 
 //-------------------main-content:-----------------------
-
 //Headers
 const mainHeaders = document.querySelectorAll('h4');
 mainHeaders[0].textContent = siteContent["main-content"]["features-h4"]; //Features
@@ -123,7 +109,8 @@ const middleImg = document.getElementById('middle-img');
 middleImg.src = siteContent["main-content"]["middle-img-src"];
 
 //---------------------.contact:-------------------------
-const contactSection = document.getElementsByClassName('contact');
+const contactSection = document.querySelectorAll('contact');
+
 //h4
 mainHeaders[5].textContent = siteContent["contact"]["contact-h4"];
 //p[5]
@@ -132,6 +119,7 @@ mainText[5].innerHTML = siteContent["contact"]["address"];
 mainText[6].textContent = siteContent["contact"]["phone"];
 //p[7]
 mainText[7].textContent = siteContent["contact"]["email"];
+
 //----------------------footer:--------------------------
 //p[8]
 mainText[8].textContent = siteContent["footer"]["copyright"];
