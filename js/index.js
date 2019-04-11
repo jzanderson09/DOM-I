@@ -52,12 +52,12 @@ header.style.display = 'flex';
 
 //Nav
 const navBar = document.getElementsByTagName('nav');
-
 const logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 //Nav a
 const navItems = document.querySelectorAll('a');
+navItems.forEach(links => links.style.color = 'green');
 
 //navItems:
 navItems[0].textContent = siteContent.nav["nav-item-1"];
