@@ -41,7 +41,7 @@ const siteContent = {
 
 //.container
 const container = document.querySelector('body');
-container.style.fontFamily = 'Titillium Web', 'sans-serif';
+//container.style.fontFamily = 'Titillium Web', 'sans-serif';
 container.style.width = '880px';
 container.style.margin = 'auto';
 
@@ -49,18 +49,15 @@ container.style.margin = 'auto';
 const header = document.querySelector('header');
 header.style.width = '100%';
 header.style.display = 'flex';
-header.style.fontFamily = 'Bangers', 'cursive';
-
 
 //Nav
 const navBar = document.getElementsByTagName('nav');
-let logo = document.getElementById("logo-img");
+
+const logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 //Nav a
 const navItems = document.querySelectorAll('a');
-//Come back to change font family of nav bar/a to
-//'titilium Web', 'sans serif'
 
 //navItems:
 navItems[0].textContent = siteContent.nav["nav-item-1"];
@@ -71,10 +68,13 @@ navItems[4].textContent = siteContent.nav["nav-item-5"];
 navItems[5].textContent = siteContent.nav["nav-item-6"];
 
 //-----------------------.cta:---------------------------
+const ctaSection = document.getElementsByClassName('.cta');
 
 //H1
 const headerH1 = document.querySelector('h1');
 headerH1.textContent = siteContent.cta["h1"];
+//Can't get line breaks, come back to this.
+headerH1.style.fontFamily = 'Bangers, cursive';
 headerH1.style.letterSpacing = '1px';
 headerH1.style.marginBottom = '15px';
 
@@ -88,37 +88,37 @@ ctaButton.textContent = siteContent.cta["button"];
 
 //-------------------main-content:-----------------------
 
-//.top-content
-const topContent = document.getElementsByClassName('top-content');
-const topContentTextContent = document.querySelector(topContent['text-content']);
-console.log(topContentTextContent);
+//Headers
+const mainHeaders = document.querySelectorAll('h4');
+mainHeaders[0].textContent = siteContent["main-content"]["features-h4"]; //Features
+mainHeaders[1].textContent = siteContent["main-content"]["about-h4"]; //About
+mainHeaders[2].textContent = siteContent["main-content"]["services-h4"]; //Services
+mainHeaders[3].textContent = siteContent["main-content"]["product-h4"]; //Product
+mainHeaders[4].textContent = siteContent["main-content"]["vision-h4"]; //Vision
+console.log(mainHeaders);
 
-  //.text-content
-  
-  //h4
+//p (textContent)
+const mainText = document.querySelectorAll('p');
+mainText[0].textContent = siteContent["main-content"]["features-content"];
+mainText[1].textContent = siteContent["main-content"]["about-content"];
+mainText[2].textContent = siteContent["main-content"]["services-content"];
+mainText[3].textContent = siteContent["main-content"]["product-content"];
+mainText[4].textContent = siteContent["main-content"]["vision-content"];
 
-  //p
-
-  //.text-content
-
-//.middle-img
-
-//.bottom-content
-  
-  //.text-content
-
-  //.text-content
-
-  //.text-content
+//middle img
+const middleImg = document.getElementById('middle-img');
+middleImg.src = siteContent["main-content"]["middle-img-src"];
 
 //---------------------.contact:-------------------------
-
+const contactSection = document.getElementsByClassName('contact');
 //h4
-
-//p
-
-//p
-
-//p
-
+mainHeaders[5].textContent = siteContent["contact"]["contact-h4"];
+//p[5]
+mainText[5].textContent = siteContent["contact"]["address"];
+//p[6]
+mainText[6].textContent = siteContent["contact"]["phone"];
+//p[7]
+mainText[7].textContent = siteContent["contact"]["email"];
 //----------------------footer:--------------------------
+//p[8]
+mainText[8].textContent = siteContent["footer"]["copyright"];
