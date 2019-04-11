@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br>is<br>awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street<br>Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -47,13 +47,26 @@ container.style.margin = 'auto';
 
 //--------------------Header:--------------------------
 const header = document.querySelector('header');
-header.style.width = '100%';
-header.style.display = 'flex';
+
+//appendChild()
+const extraNavItem = document.createElement('a');
+const firstNavItem = document.createTextNode("First Link");
+
+// const extraNavNode = document.createTextNode('first link');
+// extraNavItem.appendChild(extraNavNode);
+// document.getElementsByTagName('nav').appendChild(extraNavItem);
 
 //Nav
 const navBar = document.getElementsByTagName('nav');
 const logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+//prepend()
+
+// var node = document.createElement("LI");                 // Create a <li> node
+// var textnode = document.createTextNode("Water");         // Create a text node
+// node.appendChild(textnode);                              // Append the text to <li>
+// document.getElementById("myList").appendChild(node);     // Append <li> to <ul> with id="myList"
 
 //Nav a
 const navItems = document.querySelectorAll('a');
@@ -67,12 +80,13 @@ navItems[3].textContent = siteContent.nav["nav-item-4"];
 navItems[4].textContent = siteContent.nav["nav-item-5"];
 navItems[5].textContent = siteContent.nav["nav-item-6"];
 
+
 //-----------------------.cta:---------------------------
 const ctaSection = document.getElementsByClassName('.cta');
 
 //H1
 const headerH1 = document.querySelector('h1');
-headerH1.textContent = siteContent.cta["h1"];
+headerH1.innerHTML = siteContent.cta["h1"];
 //Can't get line breaks, come back to this.
 headerH1.style.fontFamily = 'Bangers, cursive';
 headerH1.style.letterSpacing = '1px';
@@ -95,7 +109,6 @@ mainHeaders[1].textContent = siteContent["main-content"]["about-h4"]; //About
 mainHeaders[2].textContent = siteContent["main-content"]["services-h4"]; //Services
 mainHeaders[3].textContent = siteContent["main-content"]["product-h4"]; //Product
 mainHeaders[4].textContent = siteContent["main-content"]["vision-h4"]; //Vision
-console.log(mainHeaders);
 
 //p (textContent)
 const mainText = document.querySelectorAll('p');
@@ -114,7 +127,7 @@ const contactSection = document.getElementsByClassName('contact');
 //h4
 mainHeaders[5].textContent = siteContent["contact"]["contact-h4"];
 //p[5]
-mainText[5].textContent = siteContent["contact"]["address"];
+mainText[5].innerHTML = siteContent["contact"]["address"];
 //p[6]
 mainText[6].textContent = siteContent["contact"]["phone"];
 //p[7]
